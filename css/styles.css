@@ -21,6 +21,11 @@
 
 /*Typography*/
 
+::selection {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -49,6 +54,7 @@ h2 {
 
 h3 { 
   font-size: 3rem;
+  font-weight: 500;
  
 }
 
@@ -149,7 +155,7 @@ a {
 .list {
   list-style: none;
   padding-left: 0;
-  color: var(--color-headings);
+  
 }
 
 .list--inline .list__item {
@@ -160,6 +166,7 @@ a {
 .list--tick {
   list-style-image: url(../images/tick.svg);
   padding-left: 3rem;
+  color: var(--color-headings);
 }
 
 .list--tick .list__item {
@@ -438,6 +445,7 @@ a {
 
 .media {
   display: flex;
+  margin-bottom: 4rem;
 }
 
 .media__title {
@@ -650,18 +658,21 @@ a {
   color: #7b858b;
 }
 
-.block--dark .block__heading {
+.block--dark h1,
+.block--dark h2,
+.block--dark h3
+ {
   color: #fff;
 }
 
 .block--skewed-right {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
 }
 
 .block--skewed-left {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
 }
 
 .container {
@@ -738,10 +749,6 @@ a {
 }
 
 /*Hero*/
-
-.hero {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-}
 
 .hero__tagline {
   font-size: 2rem;
@@ -834,3 +841,47 @@ a {
   }
   
 }
+
+/*Showcase Block*/
+
+/* because we want the image to be responsive on mobile we have 
+to give it its entire with.....But on laptop or wider screen we
+we dont' want the image to be responsive that's why we are going 
+to define a new width for it which is auto but also a max-with of
+its definite size of 700px because we don't want it bi bigger thant it*/
+.block-showcase__image > img {      
+  width: 100%;
+}
+
+/*In our design the image is pushed to the left more which is outside of 
+our content layout. and if we let it on auto it will take the entire 
+place of its content in the grid which is 1fr (which will be determined 
+by the width of the image and we don't want that), and the problem will be 
+that the image will be bigger thant the other content as you can check it out.
+That's why we will redifine the grid to 50% 50% instead of 1fr 1fr because
+the grid is the container and it will mean 50% of the width of the container*/
+
+@media screen and (min-width: 768px) {
+  
+  .block-showcase .grid {
+    grid-template-columns: 50% 50%;
+  }
+  
+  .block-showcase__image {
+    justify-self: end;
+    
+  }
+/*Here we apply a direct child element rule because we want to target
+the image and because the image is inside anothor container we use this 
+principale...we could also give the image element a class and target the
+class but because we will not change this structure it is ok*/  
+  .block-showcase__image > img {
+    width: auto;
+    max-width: 700px;
+  }
+ 
+}
+
+
+
+
