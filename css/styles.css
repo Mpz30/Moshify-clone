@@ -877,8 +877,8 @@ the grid is the container and it will mean 50% of the width of the container*/
     
   }
 /*Here we apply a direct child element rule because we want to target
-the image and because the image is inside anothor container we use this 
-principale...we could also give the image element a class and target the
+the image and because the image is inside another container we use this 
+principle...we could also give the image element a class and target the
 class but because we will not change this structure it is ok*/  
   .block-showcase__image > img {
     width: auto;
