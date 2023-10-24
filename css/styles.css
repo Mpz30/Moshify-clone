@@ -972,6 +972,6 @@ class but because we will not change this structure it is ok*/
 /*Callout signup*/
 
 .callout--signup {
-  transform: translateY(5rem)
+  transform: translateY(5rem);
 }
 
