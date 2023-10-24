@@ -33,7 +33,7 @@ html {
 body { 
   font-family: Inter, Arial, Helvetica, sans-serif;
   color: var(--color-body);
-  font-size: 2.4rem;
+  font-size: 2rem;
   line-height: 1.5;
 
 }
@@ -225,7 +225,7 @@ a {
   font-weight: 600;
   margin: 1rem 0;
   outline: 0;
-  padding: 2rem 3rem ;
+  padding: 2rem 4vw ;
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap; 
@@ -323,6 +323,7 @@ a {
   border: 0;
   flex-grow: 1;
   padding: 1.5rem 2rem;
+  width: 0;
 }
 
 @media screen and (min-width: 1024px) {
@@ -788,8 +789,9 @@ a {
 
 
 .block-domain__prices {
+  color: var(--color-headings);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 6rem);
   font-size: 2rem;
   font-weight: 600;
@@ -889,6 +891,7 @@ class but because we will not change this structure it is ok*/
 
 .footer {
   background-color: #232323;
+  padding-top: 10rem;
 }
 
 .footer a {
@@ -965,3 +968,10 @@ class but because we will not change this structure it is ok*/
     font-size: 1.6rem;
   }
 }
+
+/*Callout signup*/
+
+.callout--signup {
+  transform: translateY(5rem)
+}
+
